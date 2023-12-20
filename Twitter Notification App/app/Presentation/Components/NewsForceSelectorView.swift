@@ -1,0 +1,109 @@
+//
+//  NewsForceSelectorView.swift
+//  Twitter Notification App
+//
+//  Created by Moshiur Rahman on 10/21/23.
+//
+import SwiftUI
+
+struct NewsForceSelectorView: View {
+    @ObservedObject var viewmodel: AlertViewModel
+    @State var customInput: String = ""
+    @State var validInput = false
+    @State var selectedOption = ""
+    @State var eventMonitor: Any? = nil
+    @State var isCustomProbabilityPressed = false
+    
+    var body: some View {
+        VStack {
+            HStack{
+                ForEach(0..<4, id: \.self) { index in
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(index == 1 ? .black : Color(hex: "#dedede"))
+                        .frame(height: 8)
+                }
+            }
+            .padding(.horizontal)
+            HStack {
+                Text("Step 2: News Force")
+                    .font(.system(size: 24, weight: .bold))
+                    .foregroundColor(Color(red: 0.13, green: 0.13, blue: 0.13))
+                Spacer()
+                CustomRadioButtonsWithCustomPercentage(optionNames: .constant(["High", "Medium", "Low", "Don't Know"]), selectedOption: $selectedOption, customInput: $customInput)
+            }
+            .padding([.horizontal, .top])
+            .padding(.bottom, 0)
+            
+            HStack {
+                Spacer()
+                Text("Please input a valid percentage.")
+                    .foregroundStyle(.red)
+                    .padding(0)
+                    .opacity(selectedOption == "Custom" && !validInput && customInput.count > 0 ? 1: 0)
+                
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 0)
+            HStack {
+                CustomDropDown(title: .constant("Probability"), optionNames: .constant(["High", "Medium", "Low", "Don't Know", "Custom"]), selectedOption: Binding<String>(
+                    get: { viewmodel.selectedAlert?.probability ?? "" },
+                    set: { newValue in
+                        viewmodel.selectedAlert?.probability = newValue
+                    }), isCustomPressed: $isCustomProbabilityPressed)
+                Spacer()
+                Button {
+                    viewmodel.selectedAlert?.newsForce = selectedOption
+                } label: {
+                    Text("Confirm ->")
+                        .bold()
+                        .foregroundColor(.white)
+                        .padding(.vertical)
+                        .padding(.horizontal, 30)
+                        .background(.black)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
+                .buttonStyle(.plain)
+                .disabled(selectedOption == "Custom" && !validInput || selectedOption == "")
+            }
+            .padding([.horizontal, .bottom])
+            .padding(.vertical, 0)
+            
+        }
+        .background(.white)
+        .onChange(of: customInput) {
+            if let percentage = Float(customInput), (0...100).contains(percentage) {
+                self.validInput = true
+            } else {
+                self.validInput = false
+            }
+        }
+        .onChange(of: isCustomProbabilityPressed) {
+            if(isCustomProbabilityPressed == true) {
+                NSEvent.removeMonitor(self.eventMonitor as Any)
+            } else {
+                self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                    if(event.keyCode == CGKeyCode(0x24)) {
+                        enterButtonPressed()
+                        return nil
+                    }
+                    return event
+                }
+            }
+        }
+        .onAppear {
+            self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                if(event.keyCode == CGKeyCode(0x24)) {
+                    enterButtonPressed()
+                    return nil
+                }
+                return event
+            }
+        }
+        .onDisappear {
+            NSEvent.removeMonitor(self.eventMonitor as Any)
+        }
+    }
+    func enterButtonPressed() {
+        viewmodel.selectedAlert?.newsForce = selectedOption == "Custom" ? customInput + "%" : selectedOption
+    }
+}

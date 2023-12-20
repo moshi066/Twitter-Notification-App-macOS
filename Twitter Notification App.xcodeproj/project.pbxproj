@@ -1,0 +1,636 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA2383E12ADD146D0009D86E /* CustomTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2383E02ADD146D0009D86E /* CustomTabbar.swift */; };
+		EA2384032AE0FC340009D86E /* CustomRadioButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2384022AE0FC340009D86E /* CustomRadioButtons.swift */; };
+		EA2384052AE397690009D86E /* CustomDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2384042AE397690009D86E /* CustomDropDown.swift */; };
+		EA2384072AE41E590009D86E /* ProbabilitySelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2384062AE41E590009D86E /* ProbabilitySelectorView.swift */; };
+		EA2384092AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA2384082AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift */; };
+		EA23840B2AE4447D0009D86E /* NewsForceSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23840A2AE4447D0009D86E /* NewsForceSelectorView.swift */; };
+		EA23840D2AE449B10009D86E /* ConfidenceSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23840C2AE449B10009D86E /* ConfidenceSelectorView.swift */; };
+		EA23840F2AE44A990009D86E /* BuyOrSellSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA23840E2AE44A990009D86E /* BuyOrSellSelectorView.swift */; };
+		EA346E122AF5221C00990729 /* LoginQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E112AF5221C00990729 /* LoginQuery.swift */; };
+		EA346E142AF5226F00990729 /* NewsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E132AF5226F00990729 /* NewsEntity.swift */; };
+		EA346E162AF52E5A00990729 /* NewsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E152AF52E5A00990729 /* NewsRepository.swift */; };
+		EA346E182AF5318B00990729 /* NewsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E172AF5318B00990729 /* NewsUseCase.swift */; };
+		EA346E1D2AF533C400990729 /* NewsRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E1C2AF533C400990729 /* NewsRepositoryImpl.swift */; };
+		EA346E212AF535CD00990729 /* ApiRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E202AF535CD00990729 /* ApiRepository.swift */; };
+		EA346E232AF539C600990729 /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E222AF539C600990729 /* UserDefaults+Extension.swift */; };
+		EA346E252AF53A3200990729 /* AuthSessionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E242AF53A3200990729 /* AuthSessionEntity.swift */; };
+		EA346E272AF53C1000990729 /* MyError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E262AF53C1000990729 /* MyError.swift */; };
+		EA346E292AF53E3300990729 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E282AF53E3300990729 /* String+Extension.swift */; };
+		EA346E2B2AF53EE000990729 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E2A2AF53EE000990729 /* ErrorResponse.swift */; };
+		EA346E2D2AF5449600990729 /* NewsDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E2C2AF5449600990729 /* NewsDto.swift */; };
+		EA346E312AF5667100990729 /* AppDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E302AF5667100990729 /* AppDI.swift */; };
+		EA346E352AF5678000990729 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E342AF5678000990729 /* NewsViewModel.swift */; };
+		EA346E372AF6749500990729 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E362AF6749500990729 /* NewsView.swift */; };
+		EA346E392AF67E2300990729 /* NewsCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E382AF67E2300990729 /* NewsCardView.swift */; };
+		EA346E3B2AF760BD00990729 /* NewsContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E3A2AF760BD00990729 /* NewsContentView.swift */; };
+		EA346E3D2AF7647B00990729 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E3C2AF7647B00990729 /* ProfileView.swift */; };
+		EA346E402AF7A6D600990729 /* SelectedNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA346E3F2AF7A6D600990729 /* SelectedNewsView.swift */; };
+		EA7A506E2ACDD739001C512C /* Twitter_Notification_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7A506D2ACDD739001C512C /* Twitter_Notification_AppApp.swift */; };
+		EA7A50722ACDD73A001C512C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A50712ACDD73A001C512C /* Assets.xcassets */; };
+		EA7A50752ACDD73A001C512C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A50742ACDD73A001C512C /* Preview Assets.xcassets */; };
+		EA8896022B30C459004E9DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8896012B30C459004E9DED /* AppDelegate.swift */; };
+		EAD02F472B1CF228002804F9 /* AlertEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F462B1CF228002804F9 /* AlertEntity.swift */; };
+		EAD02F492B1CF320002804F9 /* AlertRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F482B1CF320002804F9 /* AlertRepository.swift */; };
+		EAD02F4B2B1CF342002804F9 /* AlertUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */; };
+		EAD02F4D2B1CF391002804F9 /* AlertDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F4C2B1CF391002804F9 /* AlertDto.swift */; };
+		EAD02F512B1CF4FA002804F9 /* AlertRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F502B1CF4FA002804F9 /* AlertRepositoryImpl.swift */; };
+		EAD02F542B1CF753002804F9 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F532B1CF753002804F9 /* AlertView.swift */; };
+		EAD02F562B1CF75C002804F9 /* AlertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F552B1CF75C002804F9 /* AlertViewModel.swift */; };
+		EAD02F582B1F8069002804F9 /* InputPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F572B1F8069002804F9 /* InputPop.swift */; };
+		EAD02F5B2B202D28002804F9 /* FeedbackRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F5A2B202D28002804F9 /* FeedbackRequest.swift */; };
+		EAD02F5D2B203091002804F9 /* FeedbackRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F5C2B203091002804F9 /* FeedbackRepository.swift */; };
+		EAD02F5F2B203209002804F9 /* FeedbackRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F5E2B203209002804F9 /* FeedbackRepositoryImpl.swift */; };
+		EAD02F612B20338B002804F9 /* FeedbackResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F602B20338B002804F9 /* FeedbackResponse.swift */; };
+		EAD02F632B203B10002804F9 /* FeedbackUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F622B203B10002804F9 /* FeedbackUseCase.swift */; };
+		EAD02F652B205E6D002804F9 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F642B205E6D002804F9 /* Date+Extension.swift */; };
+		EAD02F672B205E9C002804F9 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F662B205E9C002804F9 /* Color+Extension.swift */; };
+		EAE29E942B2A11CB00D04B58 /* AlertDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE29E932B2A11CB00D04B58 /* AlertDropDown.swift */; };
+		EAE29E962B2B24A300D04B58 /* FeebackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAE29E952B2B24A300D04B58 /* FeebackView.swift */; };
+		EAF69DFE2AE5261D00AE05C5 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF69DFD2AE5261D00AE05C5 /* ResultView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA2383E02ADD146D0009D86E /* CustomTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabbar.swift; sourceTree = "<group>"; };
+		EA2384022AE0FC340009D86E /* CustomRadioButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButtons.swift; sourceTree = "<group>"; };
+		EA2384042AE397690009D86E /* CustomDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDropDown.swift; sourceTree = "<group>"; };
+		EA2384062AE41E590009D86E /* ProbabilitySelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilitySelectorView.swift; sourceTree = "<group>"; };
+		EA2384082AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButtonsWithCustomPercentage.swift; sourceTree = "<group>"; };
+		EA23840A2AE4447D0009D86E /* NewsForceSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsForceSelectorView.swift; sourceTree = "<group>"; };
+		EA23840C2AE449B10009D86E /* ConfidenceSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfidenceSelectorView.swift; sourceTree = "<group>"; };
+		EA23840E2AE44A990009D86E /* BuyOrSellSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyOrSellSelectorView.swift; sourceTree = "<group>"; };
+		EA346E112AF5221C00990729 /* LoginQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginQuery.swift; sourceTree = "<group>"; };
+		EA346E132AF5226F00990729 /* NewsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsEntity.swift; sourceTree = "<group>"; };
+		EA346E152AF52E5A00990729 /* NewsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepository.swift; sourceTree = "<group>"; };
+		EA346E172AF5318B00990729 /* NewsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsUseCase.swift; sourceTree = "<group>"; };
+		EA346E1C2AF533C400990729 /* NewsRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsRepositoryImpl.swift; sourceTree = "<group>"; };
+		EA346E202AF535CD00990729 /* ApiRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRepository.swift; sourceTree = "<group>"; };
+		EA346E222AF539C600990729 /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		EA346E242AF53A3200990729 /* AuthSessionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSessionEntity.swift; sourceTree = "<group>"; };
+		EA346E262AF53C1000990729 /* MyError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyError.swift; sourceTree = "<group>"; };
+		EA346E282AF53E3300990729 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		EA346E2A2AF53EE000990729 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		EA346E2C2AF5449600990729 /* NewsDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDto.swift; sourceTree = "<group>"; };
+		EA346E302AF5667100990729 /* AppDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDI.swift; sourceTree = "<group>"; };
+		EA346E342AF5678000990729 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		EA346E362AF6749500990729 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		EA346E382AF67E2300990729 /* NewsCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCardView.swift; sourceTree = "<group>"; };
+		EA346E3A2AF760BD00990729 /* NewsContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentView.swift; sourceTree = "<group>"; };
+		EA346E3C2AF7647B00990729 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		EA346E3E2AF7778400990729 /* Twitter-Notification-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Twitter-Notification-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		EA346E3F2AF7A6D600990729 /* SelectedNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedNewsView.swift; sourceTree = "<group>"; };
+		EA7A506A2ACDD738001C512C /* Twitter Notification App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Twitter Notification App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA7A506D2ACDD739001C512C /* Twitter_Notification_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter_Notification_AppApp.swift; sourceTree = "<group>"; };
+		EA7A50712ACDD73A001C512C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA7A50742ACDD73A001C512C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		EA7A50762ACDD73A001C512C /* Twitter_Notification_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twitter_Notification_App.entitlements; sourceTree = "<group>"; };
+		EA8896012B30C459004E9DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAD02F462B1CF228002804F9 /* AlertEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEntity.swift; sourceTree = "<group>"; };
+		EAD02F482B1CF320002804F9 /* AlertRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRepository.swift; sourceTree = "<group>"; };
+		EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUseCase.swift; sourceTree = "<group>"; };
+		EAD02F4C2B1CF391002804F9 /* AlertDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDto.swift; sourceTree = "<group>"; };
+		EAD02F502B1CF4FA002804F9 /* AlertRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRepositoryImpl.swift; sourceTree = "<group>"; };
+		EAD02F532B1CF753002804F9 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		EAD02F552B1CF75C002804F9 /* AlertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewModel.swift; sourceTree = "<group>"; };
+		EAD02F572B1F8069002804F9 /* InputPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPop.swift; sourceTree = "<group>"; };
+		EAD02F5A2B202D28002804F9 /* FeedbackRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackRequest.swift; sourceTree = "<group>"; };
+		EAD02F5C2B203091002804F9 /* FeedbackRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackRepository.swift; sourceTree = "<group>"; };
+		EAD02F5E2B203209002804F9 /* FeedbackRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackRepositoryImpl.swift; sourceTree = "<group>"; };
+		EAD02F602B20338B002804F9 /* FeedbackResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackResponse.swift; sourceTree = "<group>"; };
+		EAD02F622B203B10002804F9 /* FeedbackUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackUseCase.swift; sourceTree = "<group>"; };
+		EAD02F642B205E6D002804F9 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		EAD02F662B205E9C002804F9 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		EAE29E932B2A11CB00D04B58 /* AlertDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDropDown.swift; sourceTree = "<group>"; };
+		EAE29E952B2B24A300D04B58 /* FeebackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeebackView.swift; sourceTree = "<group>"; };
+		EAF69DFD2AE5261D00AE05C5 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA7A50672ACDD738001C512C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA346E0D2AF5215B00990729 /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E0E2AF521A400990729 /* model */,
+				EA346E0F2AF521AF00990729 /* repository */,
+				EA346E102AF521BA00990729 /* usecase */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		EA346E0E2AF521A400990729 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E112AF5221C00990729 /* LoginQuery.swift */,
+				EA346E132AF5226F00990729 /* NewsEntity.swift */,
+				EA346E242AF53A3200990729 /* AuthSessionEntity.swift */,
+				EA346E262AF53C1000990729 /* MyError.swift */,
+				EAD02F462B1CF228002804F9 /* AlertEntity.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		EA346E0F2AF521AF00990729 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E152AF52E5A00990729 /* NewsRepository.swift */,
+				EAD02F482B1CF320002804F9 /* AlertRepository.swift */,
+				EAD02F5C2B203091002804F9 /* FeedbackRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		EA346E102AF521BA00990729 /* usecase */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E172AF5318B00990729 /* NewsUseCase.swift */,
+				EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */,
+				EAD02F622B203B10002804F9 /* FeedbackUseCase.swift */,
+			);
+			path = usecase;
+			sourceTree = "<group>";
+		};
+		EA346E192AF5332900990729 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E1B2AF5334500990729 /* dto */,
+				EA346E1A2AF5333900990729 /* repository */,
+				EA346E222AF539C600990729 /* UserDefaults+Extension.swift */,
+				EA346E282AF53E3300990729 /* String+Extension.swift */,
+				EAD02F642B205E6D002804F9 /* Date+Extension.swift */,
+				EAD02F662B205E9C002804F9 /* Color+Extension.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		EA346E1A2AF5333900990729 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E1C2AF533C400990729 /* NewsRepositoryImpl.swift */,
+				EA346E202AF535CD00990729 /* ApiRepository.swift */,
+				EAD02F502B1CF4FA002804F9 /* AlertRepositoryImpl.swift */,
+				EAD02F5E2B203209002804F9 /* FeedbackRepositoryImpl.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		EA346E1B2AF5334500990729 /* dto */ = {
+			isa = PBXGroup;
+			children = (
+				EAD02F5A2B202D28002804F9 /* FeedbackRequest.swift */,
+				EA346E2A2AF53EE000990729 /* ErrorResponse.swift */,
+				EA346E2C2AF5449600990729 /* NewsDto.swift */,
+				EAD02F4C2B1CF391002804F9 /* AlertDto.swift */,
+				EAD02F602B20338B002804F9 /* FeedbackResponse.swift */,
+			);
+			path = dto;
+			sourceTree = "<group>";
+		};
+		EA346E2E2AF5664400990729 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E322AF5675500990729 /* Presentation */,
+				EA346E2F2AF5665F00990729 /* di */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		EA346E2F2AF5665F00990729 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E302AF5667100990729 /* AppDI.swift */,
+			);
+			path = di;
+			sourceTree = "<group>";
+		};
+		EA346E322AF5675500990729 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EAD02F592B20241A002804F9 /* Components */,
+				EAD02F522B1CF749002804F9 /* AlertView */,
+				EA346E332AF5676500990729 /* NewsView */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EA346E332AF5676500990729 /* NewsView */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E342AF5678000990729 /* NewsViewModel.swift */,
+				EA346E362AF6749500990729 /* NewsView.swift */,
+				EA346E382AF67E2300990729 /* NewsCardView.swift */,
+				EA346E3A2AF760BD00990729 /* NewsContentView.swift */,
+				EA346E3C2AF7647B00990729 /* ProfileView.swift */,
+				EA346E3F2AF7A6D600990729 /* SelectedNewsView.swift */,
+			);
+			path = NewsView;
+			sourceTree = "<group>";
+		};
+		EA7A50612ACDD738001C512C = {
+			isa = PBXGroup;
+			children = (
+				EA7A506C2ACDD738001C512C /* Twitter Notification App */,
+				EA7A506B2ACDD738001C512C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EA7A506B2ACDD738001C512C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA7A506A2ACDD738001C512C /* Twitter Notification App.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA7A506C2ACDD738001C512C /* Twitter Notification App */ = {
+			isa = PBXGroup;
+			children = (
+				EA346E3E2AF7778400990729 /* Twitter-Notification-App-Info.plist */,
+				EA346E2E2AF5664400990729 /* app */,
+				EA346E192AF5332900990729 /* data */,
+				EA346E0D2AF5215B00990729 /* domain */,
+				EA7A506D2ACDD739001C512C /* Twitter_Notification_AppApp.swift */,
+				EA7A50712ACDD73A001C512C /* Assets.xcassets */,
+				EA7A50762ACDD73A001C512C /* Twitter_Notification_App.entitlements */,
+				EA7A50732ACDD73A001C512C /* Preview Content */,
+				EA8896012B30C459004E9DED /* AppDelegate.swift */,
+			);
+			path = "Twitter Notification App";
+			sourceTree = "<group>";
+		};
+		EA7A50732ACDD73A001C512C /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				EA7A50742ACDD73A001C512C /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EAD02F522B1CF749002804F9 /* AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				EAD02F532B1CF753002804F9 /* AlertView.swift */,
+				EAD02F552B1CF75C002804F9 /* AlertViewModel.swift */,
+				EAE29E932B2A11CB00D04B58 /* AlertDropDown.swift */,
+				EAE29E952B2B24A300D04B58 /* FeebackView.swift */,
+			);
+			path = AlertView;
+			sourceTree = "<group>";
+		};
+		EAD02F592B20241A002804F9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EAD02F572B1F8069002804F9 /* InputPop.swift */,
+				EA2384022AE0FC340009D86E /* CustomRadioButtons.swift */,
+				EA2384042AE397690009D86E /* CustomDropDown.swift */,
+				EA2383E02ADD146D0009D86E /* CustomTabbar.swift */,
+				EA2384062AE41E590009D86E /* ProbabilitySelectorView.swift */,
+				EA2384082AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift */,
+				EA23840A2AE4447D0009D86E /* NewsForceSelectorView.swift */,
+				EA23840C2AE449B10009D86E /* ConfidenceSelectorView.swift */,
+				EA23840E2AE44A990009D86E /* BuyOrSellSelectorView.swift */,
+				EAF69DFD2AE5261D00AE05C5 /* ResultView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA7A50692ACDD738001C512C /* Twitter Notification App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA7A50792ACDD73A001C512C /* Build configuration list for PBXNativeTarget "Twitter Notification App" */;
+			buildPhases = (
+				EA7A50662ACDD738001C512C /* Sources */,
+				EA7A50672ACDD738001C512C /* Frameworks */,
+				EA7A50682ACDD738001C512C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Twitter Notification App";
+			productName = "Twitter Notification App";
+			productReference = EA7A506A2ACDD738001C512C /* Twitter Notification App.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA7A50622ACDD738001C512C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EA7A50692ACDD738001C512C = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = EA7A50652ACDD738001C512C /* Build configuration list for PBXProject "Twitter Notification App" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA7A50612ACDD738001C512C;
+			productRefGroup = EA7A506B2ACDD738001C512C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA7A50692ACDD738001C512C /* Twitter Notification App */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA7A50682ACDD738001C512C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA7A50752ACDD73A001C512C /* Preview Assets.xcassets in Resources */,
+				EA7A50722ACDD73A001C512C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA7A50662ACDD738001C512C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA346E312AF5667100990729 /* AppDI.swift in Sources */,
+				EAD02F672B205E9C002804F9 /* Color+Extension.swift in Sources */,
+				EAD02F652B205E6D002804F9 /* Date+Extension.swift in Sources */,
+				EAD02F472B1CF228002804F9 /* AlertEntity.swift in Sources */,
+				EA2384032AE0FC340009D86E /* CustomRadioButtons.swift in Sources */,
+				EAD02F562B1CF75C002804F9 /* AlertViewModel.swift in Sources */,
+				EAD02F512B1CF4FA002804F9 /* AlertRepositoryImpl.swift in Sources */,
+				EAD02F5B2B202D28002804F9 /* FeedbackRequest.swift in Sources */,
+				EAD02F5F2B203209002804F9 /* FeedbackRepositoryImpl.swift in Sources */,
+				EA346E292AF53E3300990729 /* String+Extension.swift in Sources */,
+				EA23840D2AE449B10009D86E /* ConfidenceSelectorView.swift in Sources */,
+				EA2383E12ADD146D0009D86E /* CustomTabbar.swift in Sources */,
+				EA8896022B30C459004E9DED /* AppDelegate.swift in Sources */,
+				EA346E2B2AF53EE000990729 /* ErrorResponse.swift in Sources */,
+				EAD02F582B1F8069002804F9 /* InputPop.swift in Sources */,
+				EA346E352AF5678000990729 /* NewsViewModel.swift in Sources */,
+				EA346E162AF52E5A00990729 /* NewsRepository.swift in Sources */,
+				EA346E3D2AF7647B00990729 /* ProfileView.swift in Sources */,
+				EA2384052AE397690009D86E /* CustomDropDown.swift in Sources */,
+				EAD02F492B1CF320002804F9 /* AlertRepository.swift in Sources */,
+				EA346E122AF5221C00990729 /* LoginQuery.swift in Sources */,
+				EA23840F2AE44A990009D86E /* BuyOrSellSelectorView.swift in Sources */,
+				EA2384092AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift in Sources */,
+				EAD02F612B20338B002804F9 /* FeedbackResponse.swift in Sources */,
+				EA346E402AF7A6D600990729 /* SelectedNewsView.swift in Sources */,
+				EA346E182AF5318B00990729 /* NewsUseCase.swift in Sources */,
+				EAF69DFE2AE5261D00AE05C5 /* ResultView.swift in Sources */,
+				EAD02F4D2B1CF391002804F9 /* AlertDto.swift in Sources */,
+				EAD02F542B1CF753002804F9 /* AlertView.swift in Sources */,
+				EAD02F632B203B10002804F9 /* FeedbackUseCase.swift in Sources */,
+				EA2384072AE41E590009D86E /* ProbabilitySelectorView.swift in Sources */,
+				EA346E1D2AF533C400990729 /* NewsRepositoryImpl.swift in Sources */,
+				EAD02F4B2B1CF342002804F9 /* AlertUseCase.swift in Sources */,
+				EAE29E962B2B24A300D04B58 /* FeebackView.swift in Sources */,
+				EAE29E942B2A11CB00D04B58 /* AlertDropDown.swift in Sources */,
+				EA346E372AF6749500990729 /* NewsView.swift in Sources */,
+				EA23840B2AE4447D0009D86E /* NewsForceSelectorView.swift in Sources */,
+				EA346E2D2AF5449600990729 /* NewsDto.swift in Sources */,
+				EA346E272AF53C1000990729 /* MyError.swift in Sources */,
+				EA346E252AF53A3200990729 /* AuthSessionEntity.swift in Sources */,
+				EA346E142AF5226F00990729 /* NewsEntity.swift in Sources */,
+				EA346E212AF535CD00990729 /* ApiRepository.swift in Sources */,
+				EAD02F5D2B203091002804F9 /* FeedbackRepository.swift in Sources */,
+				EA346E3B2AF760BD00990729 /* NewsContentView.swift in Sources */,
+				EA346E392AF67E2300990729 /* NewsCardView.swift in Sources */,
+				EA346E232AF539C600990729 /* UserDefaults+Extension.swift in Sources */,
+				EA7A506E2ACDD739001C512C /* Twitter_Notification_AppApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		EA7A50772ACDD73A001C512C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA7A50782ACDD73A001C512C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		EA7A507A2ACDD73A001C512C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Twitter Notification App/Twitter_Notification_App.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Twitter Notification App/Preview Content\"";
+				DEVELOPMENT_TEAM = KGP69PVJU7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Twitter-Notification-App-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hindix.twitter-notification-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EA7A507B2ACDD73A001C512C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Twitter Notification App/Twitter_Notification_App.entitlements";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Twitter Notification App/Preview Content\"";
+				DEVELOPMENT_TEAM = KGP69PVJU7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Twitter-Notification-App-Info.plist";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hindix.twitter-notification-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA7A50652ACDD738001C512C /* Build configuration list for PBXProject "Twitter Notification App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7A50772ACDD73A001C512C /* Debug */,
+				EA7A50782ACDD73A001C512C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA7A50792ACDD73A001C512C /* Build configuration list for PBXNativeTarget "Twitter Notification App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA7A507A2ACDD73A001C512C /* Debug */,
+				EA7A507B2ACDD73A001C512C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA7A50622ACDD738001C512C /* Project object */;
+}
