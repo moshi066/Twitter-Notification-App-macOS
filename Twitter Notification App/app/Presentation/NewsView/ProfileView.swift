@@ -15,7 +15,7 @@ struct Profile: View {
             AsyncImage(url: newsViewModel.selectedNews?.icon) { phase in
                 switch phase {
                 case .empty:
-                    ProgressView()
+                    Image(systemName: "photo")
                 case .success(let image):
                     image.resizable()
                         .aspectRatio(contentMode: .fill)

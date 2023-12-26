@@ -19,6 +19,7 @@ struct CustomDropDown: View {
     @Binding var isCustomPressed: Bool
     @State var errorMessage = ""
     @State var userInput = ""
+    @State var eventMonitor: Any? = nil
     
     var body: some View {
         Button {
@@ -39,7 +40,7 @@ struct CustomDropDown: View {
                     .animation(.default, value: isExpanded)
             }
             .padding()
-            .background(Color(hex: "#00000014"))
+            .background(getButtonColor(title: selectedOption, isSelected: true))
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .buttonStyle(.plain)
@@ -111,6 +112,18 @@ struct CustomDropDown: View {
                     }
                 }
                 .padding()
+                .onAppear {
+                    self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                        if(event.keyCode == CGKeyCode(0x35)) {
+                            isExpanded = false
+                            return nil
+                        }
+                        return event
+                    }
+                }
+                .onDisappear {
+                    NSEvent.removeMonitor(self.eventMonitor as Any)
+                }
             }
         }
         .onChange(of: isCustomPressed) {
@@ -118,5 +131,20 @@ struct CustomDropDown: View {
                 selectedOption = userInput + "%"
             }
         }
+    }
+    func getButtonColor(title: String, isSelected: Bool) -> Color {
+        if (title == "High" || title == "Buy") {
+            return isSelected ? Color(hex: "#90EE90") : Color(hex: "#D4F5D4")
+        }
+        if (title == "Medium") {
+            return isSelected ? Color(hex: "#FFDAB9") : Color(hex: "#FFF5E0")
+        }
+        if (title == "Low") {
+            return isSelected ? Color(hex: "#FFC0CB") : Color(hex: "#FFE6E6")
+        }
+        if (title == "Don't Know") {
+            return isSelected ? Color(hex: "#ADD8E6") : Color(hex: "#E6E6FF")
+        }
+        return isSelected ? Color(hex: "#CCCCCC") : Color(hex: "#D5D5D5")
     }
 }

@@ -28,7 +28,7 @@ struct NewsContentView: View {
                     Spacer()
                     Divider()
                     
-                    Text("\(newsViewModel.selectedNews?.time.getTimeDifferenceString() ?? "") · \(newsViewModel.selectedNews?.time.toString(format: "MMM dd, yyyy") ?? "")")
+                    Text("\(newsViewModel.selectedNews?.time.getTimeDifferenceString() ?? "")")
                         .foregroundStyle(Color(hex: "#9f9f9f"))
                         .padding()
                 }
@@ -38,7 +38,7 @@ struct NewsContentView: View {
                     AsyncImage(url: newsViewModel.selectedNews?.image) { phase in
                         switch phase {
                         case .empty:
-                            ProgressView()
+                            Image(systemName: "photo")
                                 .frame(width: geometry.size.width * 0.5, height: geometry.size.height)
                         case .success(let image):
                             image.resizable()

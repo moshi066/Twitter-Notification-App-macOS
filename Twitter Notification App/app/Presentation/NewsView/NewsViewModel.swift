@@ -10,6 +10,7 @@ import Combine
 
 class NewsViewModel: ObservableObject {
     
+    @Published var isNewNewsAdded = false
     @Published var errorMessage: String?
     
     @Published var isLoading = false
@@ -58,6 +59,9 @@ class NewsViewModel: ObservableObject {
     }
     
     public func getLastRefreshedString(currentTime: Date) -> String {
+        if(self.isLoading) {
+            return "Updating Now"
+        }
         let calendar = Calendar.current
         
         let components = calendar.dateComponents([.second, .minute, .hour, .day], from: lastRefreshedAt, to: currentTime)
@@ -68,6 +72,8 @@ class NewsViewModel: ObservableObject {
             return "\(hours) hour\(hours == 1 ? "" : "s") ago"
         } else if let minutes = components.minute, minutes != 0 {
             return "\(minutes) minute\(minutes == 1 ? "" : "s") ago"
+        } else if let seconds = components.second, seconds != 0 {
+            return "\(seconds) second\(seconds == 1 ? "" : "s") ago"
         } else {
             return "Just now"
         }
@@ -87,10 +93,12 @@ class NewsViewModel: ObservableObject {
                     self.isLoading = false
                 },
                 receiveValue: { [unowned self] newItems in
+                    var isNewItemAdded = false
                     if(token == previousToken) {
                         for newItem in newItems {
                             if !self.newsItems.contains(where: { $0.id == newItem.id }) {
                                 self.newsItems.append(newItem)
+                                isNewItemAdded = true
                             }
                         }
                     }
@@ -99,6 +107,8 @@ class NewsViewModel: ObservableObject {
                         for var newItem in newItems {
                             if let index = newsItems.firstIndex(where: { $0.id == newItem.id }) {
                                 newItem.read = newsItems[index].read
+                            } else {
+                                isNewItemAdded = true
                             }
                             tempItems.append(newItem)
                         }
@@ -110,6 +120,7 @@ class NewsViewModel: ObservableObject {
                     if let newToken = token {
                         previousToken = newToken
                     }
+                    self.isNewNewsAdded = isNewItemAdded
                 }
             )
             .store(in: &self.subscriptions)

@@ -106,6 +106,9 @@ struct ConfidenceSelectorView: View {
         }
     }
     func enterButtonPressed() {
+        if (selectedOption == "Custom" && !validInput) {
+            return
+        }
         viewmodel.selectedAlert?.confidence = selectedOption == "Custom" ? customInput + "%" : selectedOption
     }
     func manageKeyboardEvent(isCustom: Bool) {

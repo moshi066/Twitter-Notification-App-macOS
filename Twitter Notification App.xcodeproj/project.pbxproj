@@ -38,6 +38,11 @@
 		EA7A50722ACDD73A001C512C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A50712ACDD73A001C512C /* Assets.xcassets */; };
 		EA7A50752ACDD73A001C512C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA7A50742ACDD73A001C512C /* Preview Assets.xcassets */; };
 		EA8896022B30C459004E9DED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8896012B30C459004E9DED /* AppDelegate.swift */; };
+		EAB950492B384AD70082DFB9 /* PushMesssagingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB950482B384AD70082DFB9 /* PushMesssagingRepository.swift */; };
+		EAB9504B2B384B1B0082DFB9 /* PushMessagingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9504A2B384B1B0082DFB9 /* PushMessagingUseCase.swift */; };
+		EAB9504D2B384B5E0082DFB9 /* PushMessagingRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9504C2B384B5E0082DFB9 /* PushMessagingRepositoryImpl.swift */; };
+		EAB9504F2B384C9F0082DFB9 /* RegisterTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB9504E2B384C9F0082DFB9 /* RegisterTokenRequest.swift */; };
+		EAB950522B38751A0082DFB9 /* AlertToast in Frameworks */ = {isa = PBXBuildFile; productRef = EAB950512B38751A0082DFB9 /* AlertToast */; };
 		EAD02F472B1CF228002804F9 /* AlertEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F462B1CF228002804F9 /* AlertEntity.swift */; };
 		EAD02F492B1CF320002804F9 /* AlertRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F482B1CF320002804F9 /* AlertRepository.swift */; };
 		EAD02F4B2B1CF342002804F9 /* AlertUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */; };
@@ -93,6 +98,10 @@
 		EA7A50742ACDD73A001C512C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA7A50762ACDD73A001C512C /* Twitter_Notification_App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Twitter_Notification_App.entitlements; sourceTree = "<group>"; };
 		EA8896012B30C459004E9DED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EAB950482B384AD70082DFB9 /* PushMesssagingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushMesssagingRepository.swift; sourceTree = "<group>"; };
+		EAB9504A2B384B1B0082DFB9 /* PushMessagingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushMessagingUseCase.swift; sourceTree = "<group>"; };
+		EAB9504C2B384B5E0082DFB9 /* PushMessagingRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushMessagingRepositoryImpl.swift; sourceTree = "<group>"; };
+		EAB9504E2B384C9F0082DFB9 /* RegisterTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTokenRequest.swift; sourceTree = "<group>"; };
 		EAD02F462B1CF228002804F9 /* AlertEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertEntity.swift; sourceTree = "<group>"; };
 		EAD02F482B1CF320002804F9 /* AlertRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertRepository.swift; sourceTree = "<group>"; };
 		EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUseCase.swift; sourceTree = "<group>"; };
@@ -118,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAB950522B38751A0082DFB9 /* AlertToast in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +162,7 @@
 				EA346E152AF52E5A00990729 /* NewsRepository.swift */,
 				EAD02F482B1CF320002804F9 /* AlertRepository.swift */,
 				EAD02F5C2B203091002804F9 /* FeedbackRepository.swift */,
+				EAB950482B384AD70082DFB9 /* PushMesssagingRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -162,6 +173,7 @@
 				EA346E172AF5318B00990729 /* NewsUseCase.swift */,
 				EAD02F4A2B1CF342002804F9 /* AlertUseCase.swift */,
 				EAD02F622B203B10002804F9 /* FeedbackUseCase.swift */,
+				EAB9504A2B384B1B0082DFB9 /* PushMessagingUseCase.swift */,
 			);
 			path = usecase;
 			sourceTree = "<group>";
@@ -186,6 +198,7 @@
 				EA346E202AF535CD00990729 /* ApiRepository.swift */,
 				EAD02F502B1CF4FA002804F9 /* AlertRepositoryImpl.swift */,
 				EAD02F5E2B203209002804F9 /* FeedbackRepositoryImpl.swift */,
+				EAB9504C2B384B5E0082DFB9 /* PushMessagingRepositoryImpl.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -198,6 +211,7 @@
 				EA346E2C2AF5449600990729 /* NewsDto.swift */,
 				EAD02F4C2B1CF391002804F9 /* AlertDto.swift */,
 				EAD02F602B20338B002804F9 /* FeedbackResponse.swift */,
+				EAB9504E2B384C9F0082DFB9 /* RegisterTokenRequest.swift */,
 			);
 			path = dto;
 			sourceTree = "<group>";
@@ -326,6 +340,9 @@
 			dependencies = (
 			);
 			name = "Twitter Notification App";
+			packageProductDependencies = (
+				EAB950512B38751A0082DFB9 /* AlertToast */,
+			);
 			productName = "Twitter Notification App";
 			productReference = EA7A506A2ACDD738001C512C /* Twitter Notification App.app */;
 			productType = "com.apple.product-type.application";
@@ -354,6 +371,9 @@
 				Base,
 			);
 			mainGroup = EA7A50612ACDD738001C512C;
+			packageReferences = (
+				EAB950502B38751A0082DFB9 /* XCRemoteSwiftPackageReference "AlertToast" */,
+			);
 			productRefGroup = EA7A506B2ACDD738001C512C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -382,6 +402,7 @@
 			files = (
 				EA346E312AF5667100990729 /* AppDI.swift in Sources */,
 				EAD02F672B205E9C002804F9 /* Color+Extension.swift in Sources */,
+				EAB9504D2B384B5E0082DFB9 /* PushMessagingRepositoryImpl.swift in Sources */,
 				EAD02F652B205E6D002804F9 /* Date+Extension.swift in Sources */,
 				EAD02F472B1CF228002804F9 /* AlertEntity.swift in Sources */,
 				EA2384032AE0FC340009D86E /* CustomRadioButtons.swift in Sources */,
@@ -402,6 +423,7 @@
 				EAD02F492B1CF320002804F9 /* AlertRepository.swift in Sources */,
 				EA346E122AF5221C00990729 /* LoginQuery.swift in Sources */,
 				EA23840F2AE44A990009D86E /* BuyOrSellSelectorView.swift in Sources */,
+				EAB9504F2B384C9F0082DFB9 /* RegisterTokenRequest.swift in Sources */,
 				EA2384092AE433C10009D86E /* CustomRadioButtonsWithCustomPercentage.swift in Sources */,
 				EAD02F612B20338B002804F9 /* FeedbackResponse.swift in Sources */,
 				EA346E402AF7A6D600990729 /* SelectedNewsView.swift in Sources */,
@@ -413,6 +435,7 @@
 				EA2384072AE41E590009D86E /* ProbabilitySelectorView.swift in Sources */,
 				EA346E1D2AF533C400990729 /* NewsRepositoryImpl.swift in Sources */,
 				EAD02F4B2B1CF342002804F9 /* AlertUseCase.swift in Sources */,
+				EAB9504B2B384B1B0082DFB9 /* PushMessagingUseCase.swift in Sources */,
 				EAE29E962B2B24A300D04B58 /* FeebackView.swift in Sources */,
 				EAE29E942B2A11CB00D04B58 /* AlertDropDown.swift in Sources */,
 				EA346E372AF6749500990729 /* NewsView.swift in Sources */,
@@ -422,6 +445,7 @@
 				EA346E252AF53A3200990729 /* AuthSessionEntity.swift in Sources */,
 				EA346E142AF5226F00990729 /* NewsEntity.swift in Sources */,
 				EA346E212AF535CD00990729 /* ApiRepository.swift in Sources */,
+				EAB950492B384AD70082DFB9 /* PushMesssagingRepository.swift in Sources */,
 				EAD02F5D2B203091002804F9 /* FeedbackRepository.swift in Sources */,
 				EA346E3B2AF760BD00990729 /* NewsContentView.swift in Sources */,
 				EA346E392AF67E2300990729 /* NewsCardView.swift in Sources */,
@@ -572,7 +596,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hindix.twitter-notification-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -601,7 +625,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 0.2;
+				MARKETING_VERSION = 0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hindix.twitter-notification-app";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -631,6 +655,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EAB950502B38751A0082DFB9 /* XCRemoteSwiftPackageReference "AlertToast" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/elai950/AlertToast.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EAB950512B38751A0082DFB9 /* AlertToast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EAB950502B38751A0082DFB9 /* XCRemoteSwiftPackageReference "AlertToast" */;
+			productName = AlertToast;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EA7A50622ACDD738001C512C /* Project object */;
 }

@@ -104,6 +104,10 @@ struct NewsForceSelectorView: View {
         }
     }
     func enterButtonPressed() {
+        if (selectedOption == "Custom" && !validInput) {
+            return
+        }
         viewmodel.selectedAlert?.newsForce = selectedOption == "Custom" ? customInput + "%" : selectedOption
+        
     }
 }

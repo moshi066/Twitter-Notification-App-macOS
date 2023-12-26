@@ -6,10 +6,13 @@
 //
 
 import SwiftUI
+import AlertToast
 
 struct NewsView: View {
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @ObservedObject var viewmodel = NewsViewModel()
     @ObservedObject var alertViewModel = AlertViewModel()
+    @State var isShowingToast = false
     
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
@@ -36,10 +39,16 @@ struct NewsView: View {
                                 .onReceive(timer) {_ in
                                     currentDate = Date()
                                 }
-                            Image(systemName: "arrow.triangle.2.circlepath")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(height: 12)
+                            if(viewmodel.isLoading) {
+                                ProgressView()
+                                    .controlSize(.small)
+                                    .padding(.horizontal)
+                            } else {
+                                Image(systemName: "arrow.triangle.2.circlepath")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(height: 12)
+                            }
                         }
                         
                     }
@@ -159,10 +168,6 @@ struct NewsView: View {
             .background(.white)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .sheet(isPresented: .constant(viewmodel.isLoading || alertViewModel.isLoading)) {
-            ProgressView()
-                .padding()
-        }
         .onChange(of: alertViewModel.selectedAlert) {
             viewmodel.loadNews(count: nil, token: alertViewModel.selectedAlert?.token)
         }
@@ -178,11 +183,19 @@ struct NewsView: View {
             }
             viewmodel.sendFeedback(newsId: viewmodel.selectedNews?._id ?? "", feedbackType: "news_force", feedbackValue: alertViewModel.selectedAlert?.newsForce ?? "", token: alertViewModel.selectedAlert?.token ?? "")
         }
+        .toast(isPresenting: $viewmodel.isNewNewsAdded, duration: 1) {
+            AlertToast(type: .systemImage("info.circle", Color.black), title: "Alert", subTitle: "New News has been addded")
+        }
         .onChange(of: alertViewModel.selectedAlert?.confidence) {
             if(alertViewModel.selectedAlert?.confidence == "") {
                 return
             }
             viewmodel.sendFeedback(newsId: viewmodel.selectedNews?._id ?? "", feedbackType: "confidence", feedbackValue: alertViewModel.selectedAlert?.confidence ?? "", token: alertViewModel.selectedAlert?.token ?? "")
+        }
+        .onChange(of: appDelegate.isNewsItemsAvaialble) {
+            viewmodel.loadNews(count: 10, token: alertViewModel.selectedAlert?.token)
+            appDelegate.isNewsItemsAvaialble = false
+            
         }
         .onChange(of: alertViewModel.selectedAlert?.buyOrSell) {
             if(alertViewModel.selectedAlert?.buyOrSell == "") {

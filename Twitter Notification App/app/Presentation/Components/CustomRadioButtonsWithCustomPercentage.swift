@@ -61,7 +61,7 @@ struct CustomRadioButtonsWithCustomPercentage: View {
                     }
                     .onChange(of: customHasFocus) {
                         if customHasFocus {
-                            selectedOptionIndex = 4
+                            selectedOptionIndex = optionNames.count
                             selectedOption = "Custom"
                         }
                     }
@@ -85,6 +85,15 @@ struct CustomRadioButtonsWithCustomPercentage: View {
             .onAppear {
                 selectedOption = optionNames[selectedOptionIndex]
                 self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                    if(event.keyCode == CGKeyCode(0x35)) {
+                        if(customHasFocus) {
+                            customHasFocus = false
+                            selectedOptionIndex = optionNames.count - 1
+                        }
+                    }
+                    if(self.customHasFocus) {
+                        return event
+                    }
                     if(event.keyCode == CGKeyCode(0x7B)) {
                         selectedOptionIndex = selectedOptionIndex > 0 ? selectedOptionIndex - 1: selectedOptionIndex
                         return nil

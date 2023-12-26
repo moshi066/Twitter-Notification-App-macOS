@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct Twitter_Notification_AppApp: App {
-    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     var body: some Scene {
         WindowGroup {

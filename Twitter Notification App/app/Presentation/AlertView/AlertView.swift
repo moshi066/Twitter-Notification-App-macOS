@@ -30,7 +30,7 @@ struct AlertView: View {
                                 .font(.headline)
                                 .foregroundColor(.black)
                                 .padding()
-                                .background(Color(hex: buttonColors[index]))
+                                .background(Color(hex: buttonColors[index < viewmodel.alerts.count ? index: 9]))
                                 .clipShape(.capsule)
                                 .overlay(
                                     Capsule()

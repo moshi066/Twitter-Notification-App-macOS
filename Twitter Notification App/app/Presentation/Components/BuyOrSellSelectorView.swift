@@ -115,6 +115,9 @@ struct BuyOrSellSelectorView: View {
         }
     }
     func enterButtonPressed() {
+        if (selectedOption == "Custom" && !validInput) {
+            return
+        }
         viewmodel.selectedAlert?.buyOrSell = selectedOption == "Custom" ? customInput + "%" : selectedOption
     }
     

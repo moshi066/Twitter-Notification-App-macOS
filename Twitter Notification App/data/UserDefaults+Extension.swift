@@ -35,4 +35,14 @@ extension UserDefaults {
             standard.synchronize()
         }
     }
+    
+    class var pushMessagingToken: String? {
+        get {
+            standard.string(forKey: "\(Bundle.main.bundleIdentifier!).pushMessagingToken")
+        }
+        set {
+            standard.set(newValue, forKey: "\(Bundle.main.bundleIdentifier!).pushMessagingToken")
+            standard.synchronize()
+        }
+    }
 }

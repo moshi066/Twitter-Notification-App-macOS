@@ -87,6 +87,9 @@ struct ProbabilitySelectorView: View {
         }
     }
     func enterButtonPressed() {
+        if (selectedOption == "Custom" && !validInput) {
+            return
+        }
         viewmodel.selectedAlert?.probability = selectedOption == "Custom" ? customInput + "%" : selectedOption
     }
 }

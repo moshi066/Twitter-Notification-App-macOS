@@ -20,13 +20,13 @@ extension Date {
         let components = calendar.dateComponents([.second, .minute, .hour, .day], from: self, to: currentTime)
         
         if let days = components.day, days != 0 {
-            return " \(days > 0 ? "+" : "-")\(days) day\(days == 1 ? "" : "s")"
+            return " \(days > 0 ? "+" : "-") \(days) day\(days == 1 ? "" : "s")"
         } else if let hours = components.hour, hours != 0 {
-            return "\(hours > 0 ? "+" : "-")\(hours) hour\(hours == 1 ? "" : "s")"
+            return "\(hours > 0 ? "+" : "-") \(hours) hour\(hours == 1 ? "" : "s")"
         } else if let minutes = components.minute, minutes != 0 {
-            return "\(minutes > 0 ? "+" : "-")\(minutes) minute\(minutes == 1 ? "" : "s")"
+            return "\(minutes > 0 ? "+" : "-") \(minutes) minute\(minutes == 1 ? "" : "s")"
         } else if let seconds = components.second, seconds != 0 {
-            return "\(seconds > 0 ? "+" : "-")\(seconds) second\(seconds == 1 ? "" : "s")"
+            return "\(seconds > 0 ? "+" : "-") \(seconds) second\(seconds == 1 ? "" : "s")"
         } else {
             return "Just now"
         }

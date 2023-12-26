@@ -12,6 +12,7 @@ struct AlertDropDown: View {
     @State private var isExpanded = false
     @State private var hoverColor = Color.blue
     @State var hoveredItemIndex = 0
+    @State var eventMonitor: Any? = nil
     
     var body: some View {
         Button {
@@ -73,12 +74,20 @@ struct AlertDropDown: View {
                 }
                 .padding()
             }
+            .onAppear {
+                self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                    if(event.keyCode == CGKeyCode(0x35)) {
+                        isExpanded = false
+                        return nil
+                    }
+                    return event
+                }
+            }
+            .onDisappear {
+                NSEvent.removeMonitor(self.eventMonitor as Any)
+            }
         }
         .padding()
-        .sheet(isPresented: .constant(viewmodel.isLoading)) {
-            ProgressView()
-                .padding()
-        }
     }
 }
 

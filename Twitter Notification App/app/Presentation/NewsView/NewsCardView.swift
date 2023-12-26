@@ -14,7 +14,7 @@ struct NewsCardView: View {
     var body: some View {
         HStack {
             if(news.url == nil) {
-                Image(news.id == newsViewModel.selectedNews?.id ? "twitter_logo_white" : "twitter_logo")
+                Image("twitter-logo-blue")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 28, height: 23)
@@ -23,7 +23,7 @@ struct NewsCardView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 28, height: 23)
-                    .foregroundStyle(news.id == newsViewModel.selectedNews?.id ? .white : .black)
+                    .foregroundStyle(.blue)
             }
             Text(news.body)
                 .lineLimit(1)

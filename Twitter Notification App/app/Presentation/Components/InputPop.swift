@@ -16,31 +16,45 @@ struct InputPopup: View {
     
     var body: some View {
         VStack {
-            TextField("Enter percentage", text: $userInput)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .focused($focus)
-                .padding()
-                .onAppear {
-                    focus = true
-                    self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
-                        if(event.keyCode == CGKeyCode(0x24)) {
-                            delayedAccept()
-                            return nil
+            ZStack {
+                TextField("Enter percentage", text: $userInput)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .multilineTextAlignment(.center)
+                    .focused($focus)
+                    .foregroundStyle(.clear)
+                    .padding()
+                    .onAppear {
+                        focus = true
+                        self.eventMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { event in
+                            if(event.keyCode == CGKeyCode(0x24)) {
+                                delayedAccept()
+                                return nil
+                            }
+                            return event
                         }
-                        return event
                     }
-                }
-                .onDisappear {
-                    NSEvent.removeMonitor(eventMonitor as Any)
-                }
+                    .onDisappear {
+                        NSEvent.removeMonitor(eventMonitor as Any)
+                    }
+                Text("\(userInput)%")
+                    .opacity(userInput.count == 0 ? 0: 1)
+            }
             
             Text("Please enter a valid percentage")
                 .foregroundColor(.red)
                 .opacity(!validInput && !userInput.isEmpty ? 1 : 0)
             
-            Button("Save") {
+            Button {
                 isShowingPopup = false
+            } label: {
+                Text("Save")
+                    .foregroundStyle(.white)
+                    .padding(.horizontal)
+                    .padding(.vertical, 3)
+                    .background(.blue)
+                    .clipShape(.capsule)
             }
+            .buttonStyle(.plain)
             .disabled(!validInput)
             .padding()
         }
