@@ -169,7 +169,15 @@ struct NewsView: View {
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .onChange(of: alertViewModel.selectedAlert) {
-            viewmodel.loadNews(count: nil, token: alertViewModel.selectedAlert?.token)
+            if(alertViewModel.selectedAlert != nil) {
+                viewmodel.loadNews(count: nil, token: alertViewModel.selectedAlert?.token)
+            }
+        }
+        .onChange(of: alertViewModel.alertsReloaded) {
+            if(alertViewModel.alertsReloaded) {
+                viewmodel.loadNews(count: nil, token: alertViewModel.selectedAlert?.token)
+                alertViewModel.alertsReloaded = false
+            }
         }
         .onChange(of: alertViewModel.selectedAlert?.probability) {
             if(alertViewModel.selectedAlert?.probability == "") {
@@ -192,10 +200,12 @@ struct NewsView: View {
             }
             viewmodel.sendFeedback(newsId: viewmodel.selectedNews?._id ?? "", feedbackType: "confidence", feedbackValue: alertViewModel.selectedAlert?.confidence ?? "", token: alertViewModel.selectedAlert?.token ?? "")
         }
-        .onChange(of: appDelegate.isNewsItemsAvaialble) {
-            viewmodel.loadNews(count: 10, token: alertViewModel.selectedAlert?.token)
-            appDelegate.isNewsItemsAvaialble = false
-            
+        .onChange(of: appDelegate.isNewNotificationArrived) {
+            if(appDelegate.isNewNotificationArrived) {
+                alertViewModel.loadAlerts(count: 10)
+                viewmodel.loadNews(count: 10, token: alertViewModel.selectedAlert?.token)
+                appDelegate.isNewNotificationArrived = false
+            }
         }
         .onChange(of: alertViewModel.selectedAlert?.buyOrSell) {
             if(alertViewModel.selectedAlert?.buyOrSell == "") {

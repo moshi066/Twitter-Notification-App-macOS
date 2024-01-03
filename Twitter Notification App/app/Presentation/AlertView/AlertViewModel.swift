@@ -11,6 +11,7 @@ import Combine
 class AlertViewModel: ObservableObject {
     
     @Published var errorMessage: String?
+    @Published var alertsReloaded: Bool = false
     
     @Published var isLoading = false
     
@@ -21,6 +22,7 @@ class AlertViewModel: ObservableObject {
     @Published var selectedAlertIndex: Int?
     
     private var cancellables = Set<AnyCancellable>()
+    private var timer: Timer?
     
     var selectedAlert: AlertEntity? {
         get {
@@ -42,16 +44,13 @@ class AlertViewModel: ObservableObject {
         self.alertUseCase = AlertUseCase(alertRepository: AlertRepositoryImpl(baseUrl: URL(string: "http://cryptobot-user-feedback-api-prod.eba-usyp3675.ap-northeast-1.elasticbeanstalk.com/")!))
         self.authSession = AuthSessionEntity(accessToken: "0MdQ7jAoAfs0JV0MMbkBK8O2YsyTILM7K4I6CwXzVlo")
         loadAlerts(count: 10)
-        
-        let timer = Timer.publish(every: 60, on: .main, in: .common)
-            .autoconnect()
-            .sink { _ in
-                self.loadAlerts(count: 10)
-            }
-        cancellables.insert(timer)
     }
     
     func loadAlerts(count: Int?) {
+        timer?.invalidate()
+        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
+            self?.loadAlerts(count: 10)
+        }
         self.isLoading = true
         
         self.alertUseCase.execute(count)
@@ -74,9 +73,9 @@ class AlertViewModel: ObservableObject {
                             }
                         }
                     }
-                    
+                    alertsReloaded = true
                     self.alerts = alerts.sorted(by: { $0.marketScore > $1.marketScore })
-                    selectedAlertIndex = 0
+                    self.selectAlertFromNotification()
                 }
             )
             .store(in: &self.subscriptions)
@@ -85,5 +84,16 @@ class AlertViewModel: ObservableObject {
     
     public func selectAlert(index: Int) {
         selectedAlertIndex = index
+    }
+    
+    private func selectAlertFromNotification() {
+        if let retrievedToken = UserDefaults.standard.string(forKey: "NotificationToken") {
+            if let index = self.alerts.firstIndex(where: { $0.token == retrievedToken }) {
+                selectedAlertIndex = index
+            }
+            UserDefaults.standard.removeObject(forKey: "NotificationToken")
+        } else {
+            selectedAlertIndex = 0
+        }
     }
 }

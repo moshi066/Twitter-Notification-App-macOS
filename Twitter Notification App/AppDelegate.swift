@@ -10,7 +10,7 @@ import SwiftUI
 import UserNotifications
 
 class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDelegate, ObservableObject {
-    @Published var isNewsItemsAvaialble = false
+    @Published var isNewNotificationArrived = false
     var window: NSWindow!
     let pushMessagingUseCase = PushMessagingUseCase(pushMessagingRepository: PushMessagingRepositoryImpl(baseUrl: URL(string: "http://cryptobot-user-feedback-api-prod.eba-usyp3675.ap-northeast-1.elasticbeanstalk.com/")!))
     
@@ -50,7 +50,22 @@ class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCenterDele
     }
     
     func application(_ application: NSApplication, didReceiveRemoteNotification userInfo: [String: Any]) {
-        self.isNewsItemsAvaialble = true
+        if let data = userInfo["data"] as? [String: Any],
+           let token = data["token"] as? String {
+            UserDefaults.standard.set(token, forKey: "NotificationToken")
+        }
+        self.isNewNotificationArrived = true
         NSApp.windows.first?.orderFrontRegardless()
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+            let userInfo = response.notification.request.content.userInfo
+            if let data = userInfo["data"] as? [String: Any],
+               let token = data["token"] as? String {
+                UserDefaults.standard.set(token, forKey: "NotificationToken")
+            }
+            self.isNewNotificationArrived = true
+            NSApp.windows.first?.orderFrontRegardless()
+            completionHandler()
+        }
 }

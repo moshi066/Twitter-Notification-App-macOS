@@ -205,6 +205,7 @@ class NewsViewModel: ObservableObject {
             )
             .store(in: &self.subscriptions)
     }
+    
 }
 
 
